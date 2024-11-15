@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block title %}{{offer.title}}{% endblock %}
+
+{% block content %} 
+{% if user.is_authenticated %}
+<section class="job-bob">
+    <div class="container">
+    <br><h1 class="title">{{offer.title}}</h1> </br>               
+        <h3 class="bob">{{offer.teacher}}</h3>
+        <h3 class="vacancy-bob__data">{{offer.payment}}&#8376;</h3>
+        <p class="vacancy-bob__content">{{offer.description}}</p>
+        <div class="vacancy-card2">
+        <p class="job-bob__title"> Телефон: {{offer.phone}}</p>
+        <p class="job-bob__title"> Адресс: {{offer.address}}</p>
+        <p class="job-bob__title"> Агентство: {{offer.agency}}</p>
+        <p class="job-bob__title"> Опыт: {{offer.experience}}</p>
+        </div>
+        <a class="vacancy-bob__content"><strong>Дата публикации: </strong>{{offer.created_at}}</a>
+    </div>
+</section>
+{% else %}
+<section class="access">
+    <div class="container">
+        <h1 class="title">Вы анонимный пользователь</h1>
+        <p class="dark-text">Чтобы работать с приложением вам нужно будет пройти регистрацию и авторизацию</p>
+        <div class="access-action"> <!-- Исправил здесь -->
+            <a href="{% url 'sign_up_page' %}" class="dark-button">Регистрация</a>
+            <a href="{% url 'login_page' %}" class="dark-button">Вход</a>
+        </div>
+    </div>
+</section>
+{% endif %}
+{% endblock %}

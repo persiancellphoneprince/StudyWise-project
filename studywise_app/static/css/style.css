@@ -1,0 +1,539 @@
+    @import url('https://fonts.googleapis.com/css2?family=Balsamiq+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+    * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        font-family: 'Balsamiq Sans', sans-serif;
+    }
+    :root{
+        --latte: #FFF0D1 ;
+        --amerikano: #795757 ;
+        --brown: #664343;
+        --coffe: #3B3030;
+    }
+    .container{
+        margin-left: 20px;
+        margin-right: 20px;     
+    }
+    .title{
+        font-size: 18px;
+        font-weight: 700;
+        color: var(--brown);
+    }
+
+    .title_all{
+        margin-left: 18px;
+        margin-right: 18px;
+        font-size: 18px;
+        font-weight: 700;
+        color: var(--brown);
+    }
+    .bob{
+        font-size: 18px;
+        font-weight: 700;
+        color: var(--brown);
+    }
+
+    .header {
+        padding: 5px 0;
+        background-color: var(--brown);
+    }
+    .menu-button {
+        border: none;
+        background-color: transparent;
+        cursor: pointer;
+        border-radius: 5px;
+        width: 35px;
+        height: 35px;
+        display: flex;
+        align-items: center;
+        justify-content:center; 
+    }
+    #menu-list {
+        display: none;
+        position: relative;
+        padding: 20px 0;
+        background-color: var(--amerikano);
+    
+    }
+    .menu-list .menu-list__item {
+        list-style: none;
+    }
+    .menu-list {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+    .menu-list__link {
+        text-decoration: none;
+        color: var(--latte);
+    }
+    .menu-list__link img {
+        position: relative;
+        top: 2px;
+        margin-right: 5px;
+    }
+    .menu-list img {
+        width: 16px; 
+        height: 16px; 
+    }
+
+
+    main {
+        background-color: var(--latte);
+        min-height: 100vh;
+    }
+    .auth {
+        display: block;
+        font-size: 14px;
+        margin-bottom: 5px;
+        color: var(--latte);
+        
+    }
+    
+    .categories, .vacancy,job-bob, .auth {
+        padding: 3px 0;
+    }
+    .vacancy-list {
+        margin: 20px 0;
+    }
+    .categories-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 5px; /* Пространство между элементами */
+        margin: 20px auto; /* Отступы сверху и снизу, выравнивание по центру */
+    }
+      
+    .category-item:hover{
+        background-color: var(--brown);
+    }
+    .category-item {
+        font-size: 14.8px;
+        display: inline-block;
+        margin-right: 10px;
+        margin-bottom: 10px;
+        text-decoration: none;
+        color: var(--latte);
+        background-color: var(--amerikano);
+        border-radius: 30px;
+        padding: 10px 25px;
+        transition: transform 0.3s ease, box-shadow 0.2s ease; /* Плавные переходы */
+        position: relative; /* Для использования абсолютного позиционирования внутри */
+        overflow: hidden; /* Скрыть элементы, выходящие за пределы кнопки */
+    }
+
+    /* Эффект "лопания" при наведении */
+    .category-item:hover {
+        transform: scale(1.1); /* Увеличение размера кнопки */
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.975); /* Тень */
+    }
+
+    /* Псевдоэлемент для эффекта "лопания" */
+    .category-item::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 200%; /* Ширина больше кнопки */
+        height: 200%; /* Высота больше кнопки */
+        background-color: #79575794(0 40% 47% / 0.511); /* Полупрозрачный цвет */
+        border-radius: 50%; /* Круглая форма */
+        transform: translate(-50%, -50%) scale(0); /* Начальное состояние */
+        transition: transform 0.3s ease; /* Плавный переход */
+        z-index: 0; /* Чтобы псевдоэлемент был под текстом кнопки */
+    }
+
+    /* При наведении активируем псевдоэлемент */
+    .category-item:hover::before {
+        transform: translate(-50%, -50%) scale(1); /* Увеличение псевдоэлемента */
+    }
+    /* Убедитесь, что текст находится над псевдоэлементом */
+    .category-item span {
+        position: relative; /* Чтобы текст был над псевдоэлементом */
+        z-index: 1; /* Текст выше псевдоэлемента */
+    }
+
+    /* Состояние при нажатии */
+    .category-item.active {
+        background-color: var(--coffe); /* Цвет фона при нажатии */
+        color: var(--latte); /* Изменение цвета текста при нажатии */
+    }
+    .title_all__vxod {
+        text-align: center;
+        background-color: var(--coffe);
+        border-radius: 15px;
+        color: var(--latte);
+        font-size: 20px;
+        padding: 12px 0;
+        margin-left: 20px;
+        margin-right: 20px;
+        margin-top: 70px;
+        margin-bottom: 25px;
+    }   
+    .vacancy-card {
+        background-color: var(--amerikano);
+        padding: 8px;
+        border-radius: 15px;
+        margin-top: -10px;
+        margin-bottom: 18px;
+    }
+    .vacancy-card__title, .vacancy-card__company{
+        color: var(--latte);
+        font-size: 18px;
+        margin-bottom: 5px;
+    }
+    .title {
+        text-align: center;
+        background-color: var(--coffe);
+        border-radius: 15px;
+        color: var(--latte);  
+        font-size: 20px;  
+        padding: 6px 0;    
+    }
+
+    .title_all {
+        text-align: center;
+        background-color: var(--coffe);
+        border-radius: 15px;
+        color: var(--latte);  
+        font-size: 16px;  
+        padding: 6px 0;  
+    }
+    .title_all__vxod {
+        text-align: center;
+        background-color: var(--coffe);
+        border-radius: 15px;
+        color: var(--latte);  
+        font-size: 20px;  
+        padding: 12px 0;  
+        margin-left: 20px;
+        margin-right: 20px;
+        margin-top: 70px;
+    }
+
+    .spaced {
+      margin-bottom: 20px; /* или любое значение */
+    }
+  
+
+    .vacancy-details-link {
+        display: block; /* Чтобы сделать весь блок кликабельным */
+        text-decoration: none; /* Убираем подчеркивание */
+        border-radius: 10px; /* Скругление углов */
+        padding: 10px; /* Внутренние отступы */
+        color: var(--brown); /* Цвет текста */
+        transition: background-color 0.3s; /* Плавный переход цвета */
+    }
+    .vacancy-details-link:hover {
+        background-color: var(--amerikano); /* Цвет фона при наведении */
+    }
+    .vacancy-details-link1 {
+        display: block; /* Чтобы сделать весь блок кликабельным */
+        text-decoration: none; /* Убираем подчеркивание */
+        border-radius: 10px; /* Скругление углов */
+        padding: 10px; /* Внутренние отступы */
+        color: var(--latte); /* Цвет текста */
+        transition: background-color 0.3s; /* Плавный переход цвета */
+    }
+    .vacancy-details-link1:hover {
+        background-color: var(--amerikano); /* Цвет фона при наведении */
+    }
+    .vacancy-card__title{
+        font-weight: 400;
+    }
+    .vacancy-card__title1 {
+        text-align: center; 
+    }
+    .vacancy-card__company{
+        font-weight: 400;
+    }
+    .dark-button  {
+        font-size: 12px;
+        text-decoration: none;
+        display: inline-block;
+        margin: 10px;
+        background-color: var(--latte);
+        padding: 10px 35px ;
+        border-radius: 30px;
+        transition: transform 0.2s ease; 
+    }
+.button-success{
+    cursor: pointer;
+    font-size: 12px;
+    text-decoration: none;
+    display: inline-block;
+    margin: 4px 0;
+    background-color: var(--dark);
+    color: var(--secondary);
+    border-radius: 15px;
+    border: none;
+    }
+    .button-success{
+        background-color: var(--brown);
+        color: var(--latte);
+        font-weight: 600;
+        padding: 12px 90px;
+        margin-top: 100px; 
+        margin-left: 105px;
+        margin-right: 55px
+    }
+    
+
+    .bob{
+        color: var(--coffe);
+        margin-bottom: 5px;
+    }
+    .vacancy-bob__data {
+        font-size: 14px; /* Установите нужный размер шрифта */
+        font-weight: 400; /* Установите нужный вес шрифта */
+        margin-bottom: 5px;
+    }
+
+    .vacancy-bob__data span {
+        font-size: 12px; /* Установите нужный размер шрифта для <span> */
+        font-weight: 700; /* Установите нужный вес шрифта для <span> */
+    }
+    .vacancy-card1 {
+        background-color: var(--brown);
+        padding: 10px;
+        border-radius: 16px;
+        margin-top: -10px;
+        margin-bottom: 18px;
+        color: var(--latte);
+        margin-left: 18px;
+        margin-right: 18px;
+        margin-bottom: 35px;
+    }
+    .vacancy-bob__content {
+        margin: 0; /* Убирает отступы сверху и снизу */
+        padding: 0; /* Убирает внутренние отступы */   
+        font-size: 16px;
+        margin-bottom: 20px; 
+        color: var(--coffe);
+    }
+    p {
+        margin: 5px; /* Убирает внешние отступы */
+        
+    }
+    a {
+        margin: 0; 
+        padding: 0;   
+    }
+    .vacancy-card2 {
+        background-color: var(--brown);
+        padding: 10px;
+        border-radius: 16px;
+        margin-top: -10px;
+        margin-bottom: 18px;
+        color: var(--latte);
+    }
+    .all-subjects__card {
+        background-color: var(--brown);
+        padding: 10px;
+        border-radius: 16px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        color: var(--latte);
+        margin-left: 18px;
+        margin-right: 18px;
+    }
+    .subjects-card{
+        margin-top: 10px;
+    }
+    .title_all br {
+        display: block; 
+        margin-top: 10px; 
+    }
+.job-detail_all{
+    padding-top: 10px;
+}
+.title_all2_0{
+    
+    text-align: center;
+    background-color: var(--coffe);
+    border-radius: 15px;
+    color: var(--latte);  
+    font-size: 16px;    
+    padding: 6px 0;     
+    margin-left: 17px;      
+    margin-right: 17px;
+}
+.job-detail_all52{
+    padding-top: -10px;
+}
+
+.star {
+    width: 30px;
+    height: 30px;
+    background: url('../images/star.svg') no-repeat center center;
+    background-size: contain;
+    cursor: pointer;
+    display: inline-block;
+    position: absolute; 
+    right: 45px;
+    margin-top: -25px;
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+
+.star.filled {
+    background: url('../images/star-filled.svg') no-repeat center center;
+    background-size: contain;
+    transform: scale(1.2);
+}
+
+/* Плавная анимация */
+.star:hover {
+    transform: scale(1.1);
+}
+
+.star.filled:hover {
+    transform: scale(1.3);
+}
+
+.space-between {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.help{
+    font-size: 14px;
+    text-align: center;
+    color: var(--coffe);
+    margin-bottom: 20px;
+}
+.help-link {
+    font-weight: 600;
+    text-decoration: none;
+    color: var(--dark);
+}
+.otstyp{
+    text-align: center; 
+    margin-top: 30px;
+}
+.otstyp-1{
+
+    padding-bottom: 40px;
+    padding-top: 20px;
+    text-align: center; 
+
+}
+.otstyp-1 input {
+    width: 330px; 
+    height: 30px;  
+    border-radius: 15px;  
+    padding: 10px;  
+    border: 2px solid var(--coffe);  
+    background-color: var(--latte);
+    color: var(--coffe);
+}
+.otstyp-3{
+    text-align: center;
+    padding: 0px;
+    font-size: 18px;
+}
+.otstyp-2{
+    padding-bottom: 40px;
+    padding-top: 20px;
+    text-align: center; 
+
+}
+.otstyp-2 input {
+    width: 330px;
+    height: 30px;
+    border-radius: 15px;
+    padding: 10px;
+    border: 2px solid var(--coffe); 
+    background-color: var(--latte);
+    color: var(--coffe);
+}
+
+.title_all__vxod1 {
+    text-align: center;
+    background-color: var(--coffe);
+    border-radius: 15px;
+    color: var(--latte);  
+    font-size: 16px;
+    width: 330px; 
+    height: 40px; 
+    margin: 0 auto;  /* Горизонтальное выравнивание по центру */
+    margin-bottom: 15px;
+    display: block;  /* Преобразует элемент в блочный для применения auto margin */
+}
+
+.title_all__vxod1-0{
+    text-align: center;
+    background-color: var(--coffe);
+    border-radius: 15px;
+    color: var(--latte);  
+    font-size: 16px;
+    padding-top: 10px;  
+    padding-bottom: 10px;
+    padding-left: 135px;
+    padding-right: 135px;
+    margin-top: 25px;  
+    margin-left: 50px;
+    margin-right: 20px;
+}
+.zakirckasal{
+    font-size: 16px;
+}
+
+.auth form {
+    margin: 20px 0;
+}
+
+.auth label {
+    display:block;
+    color: var(--latte);
+    font-weight: 600;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.auth input {
+    width: 90%;
+    padding: 10px;
+    border: none;
+    background-color: var(--latte);
+    border-radius: 5px;
+    display: block;
+    margin: 0 auto 10px auto;  /* Горизонтальное выравнивание по центру */
+}
+
+
+.helptext {
+    display:none;
+}
+
+
+.access .title {
+    text-align: center;
+    margin-bottom: 20px;
+    color: var(--latte);
+}
+
+.access {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    width: 100%;
+    flex-direction: column;
+}
+
+.access-action {
+    display: flex;
+    justify-content: center;
+    gap: 2px;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center; /* Для дополнительного центрирования */
+}
+
+.dark-button {
+    background-color: var(--brown);
+    color: var(--latte);
+    text-align: center;
+}

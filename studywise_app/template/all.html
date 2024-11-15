@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <button class="menu-button" onclick="burger()">
+            <img src="./images/menu.svg" alt="Menu">
+            </button>
+        </div>
+    </header>
+    <div id="menu-list" style="display: none;">
+        <div class="container">
+            <ul class="menu-list">
+                <li class="menu-list__item">
+                    <a href="index.html" class="menu-list__link">
+                        <img src="./images/menu-list/home.svg" alt="Home">
+                        <span>Главная</span>
+                    </a>
+                </li>
+                <li class="menu-list__item">
+                    <a href="all1.html" class="menu-list__link">
+                        <img src="./images/menu-list/book.svg" alt="Vacancies">
+                        <span>Предметы</span>
+                    </a>
+                </li>
+                <li class="menu-list__item">
+                    <a href="all.html" class="menu-list__link">
+                        <img src="./images/menu-list/Vacancies.svg" alt="Book">
+                        <span>Вакансии</span>
+                    </a>
+                </li>
+                <li class="menu-list__item">
+                    <a href="privat.html" class="menu-list__link">
+                        <img src="./images/menu-list/comment.svg" alt="Comment">
+                        <span>Избранные </span>
+                    </a>
+                <li class="menu-list__item">
+                    <a href="vixod.html" class="menu-list__link">
+                        <img src="./images/menu-list/reg.svg" alt="Reg">
+                        <span>Регистрация</span>
+                    </a>
+                </li>
+                </li>
+                <li class="menu-list__item">
+                    <a href="vxod.html" class="menu-list__link">
+                        <img src="./images/menu-list/vxod.svg" alt="Vxod">
+                        <span>Вход</span>
+                    </a>
+                </li>
+                <li class="menu-list__item">
+                    <a href="vxod.html" class="menu-list__link">
+                        <img src="./images/menu-list/chelovek.svg" alt="Chelovek">
+                        <span>Diartv.vip-pro-ultra : Выход</span>
+                    </a>    
+                </li>
+            </ul>
+        </div>
+    </div>
+    <main>
+        <section class="job-detail_all">
+            <br><h1 class="title_all">Все предложения </h1> </br>
+            <div class="vacancy-card1">
+                <a href="job-bob.html" class="vacancy-details-link1">
+                    <h3 class="vacancy-card__title">Репетитор по Физике</h3>
+                    <h3 class="vacancy-card__company">Галина Сергеевна</h3>
+                    <h3 class="vacancy-card__title">опыт 30 лет</h3>
+                    <h3 class="vacancy-card__title">5000&#8376;/час</h3>
+                    <div class="star" onclick="toggleStar(this)"></div>
+                </a>
+            </div>
+            <div class="vacancy-card1">
+                <a href="#" class="vacancy-details-link1">
+                    <h3 class="vacancy-card__title">Репетитор по Химии</h3>
+                    <h3 class="vacancy-card__company">Елена Викторовна</h3>
+                    <h3 class="vacancy-card__title">опыт 20 лет</h3>
+                    <h3 class="vacancy-card__title">3600&#8376;/час</h3>
+                    <div class="star" onclick="toggleStar(this)"></div>
+                </a>
+            </div>
+            <div class="vacancy-card1">
+                <a href="#" class="vacancy-details-link1">
+                    <h3 class="vacancy-card__title">Репетитор по Математике</h3>
+                    <h3 class="vacancy-card__company">Бахытжан Кабдзылдановна</h3>
+                    <h3 class="vacancy-card__title">опыт 10 лет</h3>
+                    <h3 class="vacancy-card__title">4000&#8376;/час</h3>
+                    <div class="star" onclick="toggleStar(this)"></div>
+                </a>
+            </div>
+            <div class="vacancy-card1">
+                <a href="#" class="vacancy-details-link1">
+                    <h3 class="vacancy-card__title">Репетитор по Англискому</h3>
+                    <h3 class="vacancy-card__company">Айнур Аскаровна</h3>
+                    <h3 class="vacancy-card__title">опыт 5 лет</h3>
+                    <h3 class="vacancy-card__title">4600&#8376;/час</h3>
+                    <div class="star" onclick="toggleStar(this)"></div>
+                </a>
+            </div>
+            <div class="vacancy-card1">
+                <a href="#" class="vacancy-details-link1">
+                    <h3 class="vacancy-card__title">Репетитор по Информатике</h3>
+                    <h3 class="vacancy-card__company">Аяна Ажебаевна</h3>
+                    <h3 class="vacancy-card__title">опыт 55 лет</h3>
+                    <h3 class="vacancy-card__title">9999&#8376;/час</h3>
+                    <div class="star" onclick="toggleStar(this)"></div>
+                </a>
+            </div>
+            <div class="vacancy-card1">
+                <a href="#" class="vacancy-details-link1">
+                    <h3 class="vacancy-card__title">Репетитор по Биологии</h3>
+                    <h3 class="vacancy-card__company">Наталья Пехотовна</h3>
+                    <h3 class="vacancy-card__title">опыт 5 лет</h3>
+                    <h3 class="vacancy-card__title">5000&#8376;/час</h3>
+                    <div class="star" onclick="toggleStar(this)"></div>
+                </a>
+            </div>
+        </section>
+    </main>
+    <script src="./js/script.js"></script>
+</body>
+</html>

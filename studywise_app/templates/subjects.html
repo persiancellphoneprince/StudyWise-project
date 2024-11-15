@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block title %}Все{% endblock %}
+
+{% block content %}
+{% if user.is_authenticated %}
+<section class="job-detail_all">
+    <h1 class="title_all">Все предметы</h1>
+    
+    {% for subject in subjects %}
+    <div class="all-subjects__card">
+        <a href="{% url 'offers_by_subject_page' subject.slug %}" class="vacancy-details-link1">
+            <h3 class="vacancy-card__title1">{{ subject.name }}</h3>
+        </a>        
+    </div> 
+    {% endfor %}
+</section>
+{% else %}
+<section class="access">
+    <div class="container">
+        <h1 class="title">Вы анонимный пользователь</h1>
+        <p class="dark-text">Чтобы работать с приложением вам нужно будет пройти регистрацию и авторизацию</p>
+        <div class="access-action">
+            <a href="{% url 'sign_up_page' %}" class="dark-button">Регистрация</a>
+            <a href="{% url 'login_page' %}" class="dark-button">Вход</a>
+        </div>
+    </div>
+</section>
+{% endif %}
+{% endblock %}

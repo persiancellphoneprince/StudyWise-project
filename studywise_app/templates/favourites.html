@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block title %}Избранное{% endblock %}
+
+{% block content %}
+{% if user.is_authenticated %}
+<main>
+    <section class="job-detail_all52">
+        <br><h1 class="title_all2_0">Избранное</h1></br>
+        
+        {% for favourite in favourites %}
+            <div class="vacancy-card1">
+                <a href="{% url 'favourite_detail_page' favourite.pk %}" class="vacancy-details-link1">
+                    <h3 class="vacancy-card__title">Репетитор по Физике</h3>
+                    <h3 class="vacancy-card__company">Галина Сергеевна</h3>
+                    <h3 class="vacancy-card__title">опыт 30 лет</h3>
+                    <h3 class="vacancy-card__title">5000&#8376;/час</h3>
+                    <div class="star-filled.svg" onclick="toggleStar(this)"></div>
+                </a>
+            </div>
+        {% empty %}
+            <p>Ваши избранные репетиторы пока пусты.</p>
+        {% endfor %}
+    </section>
+</main>
+{% else %}
+<section class="access">
+    <div class="container">
+        <h1 class="title">Вы анонимный пользователь</h1>
+        <p class="dark-text">Чтобы работать с приложением вам нужно будет пройти регистрацию и авторизацию</p>
+        <div class="access-action"> <!-- Исправил здесь -->
+            <a href="{% url 'sign_up_page' %}" class="dark-button">Регистрация</a>
+            <a href="{% url 'login_page' %}" class="dark-button">Вход</a>
+        </div>
+    </div>
+</section>
+{% endif %}
+{% endblock %}
